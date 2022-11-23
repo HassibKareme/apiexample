@@ -2,7 +2,8 @@ name: Node Build en test
 
 on:
   push:
-    branches: [main]
+    branches: [master]
+
 jobs:
   test_pull_request:
     runs-on: ${{matrix.os}}
@@ -10,19 +11,19 @@ jobs:
     strategy:
       matrix:
         node-version: [16.x]
-        os: [ubuntu-latest, windows-latest]
-      
+        os: [ubuntu-latest]
+    
     steps:
       - uses: actions/checkout@v2
       - name: use Node.js ${{matrix.node-version}}
         uses: actions/setup-node@v1
         with:
           node-version: ${{matrix.node-version}}
-      - run: npm ci //clean install
+      - run: npm ci
       - run: npm test
       - run: npm run build
-      - name: upload artifect with JSON results  
+      - name: upload artifact with JSON results
         uses: actions/upload-artifact@v3
         with:
           name: output
-          path: output.json    
+          path: output.json

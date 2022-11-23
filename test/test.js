@@ -21,8 +21,8 @@ describe('get campus', () => {
 
                         console.log("Json file has been saved.");
                     }
-                console.log(res.body[0]) //We verwachte de eerste campus terug.
-            })
+                    console.log(res.body[0]) //We verwachte de eerste campus terug.
+                })
     })
 })
 
