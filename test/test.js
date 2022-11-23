@@ -1,6 +1,6 @@
 const request =require ('supertest');
 
-describe('get campus'), () => {
+describe('get campus', () => {
     it('should return first campus', async () => {
         await request('http://campus-api-example.netlify.app') //Dit is de api van de docent. Je kan die van jezelf ook gebruiken.
         .get('/.netlify/functions/api/campus')
@@ -10,5 +10,5 @@ describe('get campus'), () => {
             console.log(res.body[0]) //We verwachte de eerste campus terug.
         }
     )})
-}
+})
 
