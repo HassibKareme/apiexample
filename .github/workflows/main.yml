@@ -21,8 +21,8 @@ jobs:
       - run: npm ci //clean install
       - run: npm test
       - run: npm run build
-        name: upload artifect with JSON results
-        uses: action/upload-artifact@v3
+        name: upload artifect with JSON results  
+        uses: actions/upload-artifact@v3
         with:
           name: output
           path: output.json    
